@@ -17,12 +17,14 @@ function play() {
     winner();
     console.log(flag);
     $(this).attr("disabled", true);
+    $(this).addClass('bg-danger-subtle')
   } else if (flag === 0) {
     $(this).val("O");
     flag = 1;
     winner();
     console.log(flag);
     $(this).attr("disabled", true);
+    $(this).addClass('bg-secondary-subtle')
   }
 }
 
@@ -103,7 +105,7 @@ $("#b9").val() === "X"){
   $("#b5").val() === "O" &&
   $("#b8").val() === "O"){
     $('.winner').html(`The Winner is O`)
-    $('#b1 , #b5 , #b8').css({'color':'red'}) 
+    $('#b , #b5 , #b8').css({'color':'red'}) 
     stop();
 }
 else if($("#b3").val() === "O" &&
@@ -146,7 +148,7 @@ function stop() {
 // reset
 $("#ResetBtn").click(function () {
   $("#b1 , #b2 , #b3 , #b4 , #b5 , #b6 , #b7 , #b8, #b9").val("");
-  $("#b1 , #b2 ,#b3, #b4, #b5 , #b6 , #b7 , #b8 , #b9").removeAttr("disabled");
+  $("#b1 , #b2 ,#b3, #b4, #b5 , #b6 , #b7 , #b8 , #b9").removeAttr("disabled").removeClass('bg-secondary-subtle').removeClass('bg-danger-subtle')
   $("#b1 , #b2 , #b3 , #b4 , #b5 , #b6 , #b7 , #b8, #b9").css({"color":'black'});
 
   $(".winner").empty();
